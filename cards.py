@@ -3,18 +3,16 @@ import random
 suits = ['Spades', 'Hearts', 'Diamonds', 'Clubs']
 ranks = ['Ace', '2', '3','4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen',
         'King']
-counter = 0
 
 ''' Initialize the deck with size 52 to ensure no index errors since I choose
 to not use the append function '''
-deck = [None] * 52
+deck = []
 
 ''' Create an ordered deck of cards from only the suits and ranks array
 without having to type out all 52 cards by using a nested for loop'''
 for i in range(len(suits)):
     for j in range(len(ranks)):
-        deck[counter] = ranks[j] + " of " + suits[i]
-        counter = counter + 1
+        deck.append(ranks[j] + " of " + suits[i])
 
 def shuffleDeck():
     ''' Shuffles the unshuffled deck using the shuffle function from random '''
